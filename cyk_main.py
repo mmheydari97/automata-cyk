@@ -104,5 +104,5 @@ def cyk_alg(varies, terms, inp):
 if __name__ == '__main__':
     v, t = read_grammar()
     r = read_input()
-    table = cyk_alg(v, t, r[0])
-    print(table)
+    tab = cyk_alg(v, t, r[0])
+    print(tab)
