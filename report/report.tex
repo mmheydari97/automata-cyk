@@ -1,0 +1,83 @@
+\documentclass[a4paper]{article}
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[tmargin=1in, rmargin=1.25in, bmargin=1in, lmargin=1.25in]{geometry}
+\usepackage{pdfpages}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{color}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.96,0.96,0.94}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=4
+}
+
+\lstset{style=mystyle}
+\usepackage{wrapfig}
+
+\usepackage{ptext}
+\usepackage{lipsum}
+
+\usepackage{xepersian}
+\settextfont[Scale=1.1]{XB Yas}
+\setlatintextfont{Arial}
+\setdigitfont{Arial}
+
+
+\title{تحلیل الگوریتم \lr{cyk}}
+\author{محمد مهدی حیدری\\۹۴۳۱۳۰۶}
+\begin{document}
+	\maketitle
+	در فایل 
+	\lr{cyk\_main.py}
+	چند تابع کمکی برای خواندن ورودی و گرامر از فایل متنی نوشته شده. در انتهای هر فایل باید یک خط خالی وجود
+	داشته باشد. سمت راست و چپ هر قانون گرامر باید با $\rightarrow$ جدا شده باشد و نتایج آن می‌تواند با $|$،
+	\lr{or}
+	شود. یک تابع نیز برای نمایش نتیجه الگوریتم نوشته شده که در ابتدای هر خط طول زیرمجموعه‌های مورد بررسی از 
+	ورودی نوشته شده است. نتیجه‌ی موجود در هر خانه با 
+	\{ \}
+	 مشخص شده و اگر خالی باشد به جای آن ــ گذاشته شده.
+	در تابع مربوط به الگوریتم ابتدا ترمینال‌های موجود در ورودی در نظر گرفته می‌شوند. قواعدی که منجر به تولید 
+	ترمینال می‌شوند به طور جداگانه ذخیره شده‌اند و فقط در مرحله اول مورد نیاز هستند. برای هر ترمینال در ورودی
+	متغیری در را پیدا می‌کنیم که در سمت چپ یک قاعده که آن ترمینال را تولید می‌کند، حضور داشته باشد. در مرحله بعد
+	زیر رشته‌های دوتایی را بررسی می‌کنیم. برای رخ دادن هرکدام باید در سمت راست قواعدی که دو متغیر تولید می‌کنند
+	 به دنبال آنها بگردیم و متغیر سمت چپ را ذخیره کنیم‌. در مراحل بعدی برای هر زیررشته ورودی چک می‌کنیم که تحت
+	 چه حالت‌هایی قابل ساخته شدن هستند. مثلا 
+	 \lr{aba}
+	 از ترکیب
+	 \lr{ab + a}
+	 یا
+	 \lr{a + ba}
+	 تولید می‌شود که نتایج هر یک در جدول موجود است و با یک تابع کمکی تمام حالت‌های ممکن را می‌سازیم و باز به دنبال
+	 حالت‌های رخداد آن می‌گردیم در مرحله آخر اگر متغیر آغازی در نتیجه وجود داشته باشد یعنی می‌توانیم با شروع از
+	 آن و استفاده از قواعد موجود در گرامر، رشته داده شده را بسازیم.
+	 \newpage
+	 
+	  \begin{latin}
+	  	\lstinputlisting[language=Python]{../cyk_main.py}
+	  \end{latin}
+  	برای مشاهده کد می‌توانید به 
+  	\href{https://github.com/mmheydari97/automata-cyk}{اینجا}
+  	مراجعه کنید.
+\end{document}

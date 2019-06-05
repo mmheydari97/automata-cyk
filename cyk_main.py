@@ -1,5 +1,4 @@
 import os
-from builtins import print
 
 
 def create_cell(first, second):
@@ -115,7 +114,7 @@ def show_result(tab, inp):
         print("\t{}".format(c), end="\t")
     print()
     for i in range(len(inp)):
-        print(i, end="")
+        print(i+1, end="")
         for c in tab[i]:
             if c == set():
                 print("\t{}".format("_"), end="\t")
