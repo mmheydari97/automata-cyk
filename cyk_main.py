@@ -103,6 +103,14 @@ def cyk_alg(varies, terms, inp):
 
 
 def show_result(tab, inp):
+    """
+    this function prints the procedure of cyk.
+    in the end there is a message showing if the input
+    belongs to the grammar
+    :param tab: table
+    :param inp: input
+    :return: None
+    """
     for c in inp:
         print("\t{}".format(c), end="\t")
     print()
