@@ -1,4 +1,5 @@
 import os
+from builtins import print
 
 
 def create_cell(first, second):
@@ -101,8 +102,27 @@ def cyk_alg(varies, terms, inp):
     return table
 
 
+def show_result(tab, inp):
+    for c in inp:
+        print("\t{}".format(c), end="\t")
+    print()
+    for i in range(len(inp)):
+        print(i, end="")
+        for c in tab[i]:
+            if c == set():
+                print("\t{}".format("_"), end="\t")
+            else:
+                print("\t{}".format(c), end=" ")
+        print()
+
+    if 'S' in tab[len(inp)-1][0]:
+        print("The input belongs to this context free grammar!")
+    else:
+        print("The input does not belong to this context free grammar!")
+
+
 if __name__ == '__main__':
     v, t = read_grammar()
-    r = read_input()
-    tab = cyk_alg(v, t, r[0])
-    print(tab)
+    r = read_input()[0]
+    ta = cyk_alg(v, t, r)
+    show_result(ta, r)
