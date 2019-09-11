@@ -43,3 +43,7 @@ End
 
 ## example
 You can find interactive example [here](https://www.xarg.org/tools/cyk-algorithm/).
+
+## License
+    
+    This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details
